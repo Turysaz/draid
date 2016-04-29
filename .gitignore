@@ -1,0 +1,7 @@
+# editors
+*.swp
+*.swo
+
+# compiled files
+*.pyc
+
