@@ -3,18 +3,24 @@
 terminal input:
 
 draid +
-- bu [<options>] <location> <location-backup>
-	- __options__
-	- -c - make change backup, else: overwrite
-	- -f - dont keep deleted files
-	- -t [n] - keep deleted files for n days (default 30)
-	- -l [<path>] - write log to file (append)
-	- -d - dry-run
-- mv <source> <bu-path> <target>
-- rm <target> <bu-path>
-- ls-del <bu-path>
-- find-missing-bu <dir1> <dir2>
-- revive <bu-path> <original>
-- keep <n> <bu-path> - keep deleted file in backup for n days from now on
-- cleanup <bu-path> - finally delete all deleted files and folders
+
+bu [<options>] <location> <location-backup>
+	
+	_options_
+	
+	-c 			make change backup, else: overwrite
+	-f 			dont keep deleted files
+	-t [n] 			keep deleted files for n days (default 30)
+	-l [<path>] 		write log to file (append)
+	-d 			dry-run
+	-e [<d1>;<d2>;...]	exclude folders from backup
+	-v			verbose
+	
+mv <source> <bu-path> <target> 	move a file
+rm <target> <bu-path>		remove a file permanently
+ls-del <bu-path>		list all deleted files
+find-missing-bu <orig> <bkup>	find files that are not stored in backup yet
+revive <bu-path> <original>	revive a deleted file -> restore from backup
+keep <n> <bu-path>		keep deleted file in backup for n days from now on
+cleanup <bu-path> 		finally delete all deleted files and folders - confirm!
 
